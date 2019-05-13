@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 20px 20px 10px;
+  background-color: #000;
+  color: #feda4a;
+  text-align: center;
+  overflow: hidden;
+}
+
+.textbox {
+  display: -ms-grid;
+  display: grid;
+  border: solid #feda4a;
+}
+
+.container {
+  max-width: 90%;
+  max-height: 80vh;
+  margin: auto;
+  overflow: hidden;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  top: -25px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(75%, black));
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  /* Flexbox to center the entire element on the screen */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  /* This is a magic number based on the context in which this snippet is used and effects the perspective */
+  height: 800px;
+  /* This sets allows us to transform the text on a 3D plane, and is somewhat a magic number */
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  /* The rest is totally up to personal styling preferences */
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  text-align: justify;
+}
+
+.crawl {
+  /* Position the element so we can adjust the top property in the animation */
+  position: relative;
+  /* Making sure the text is fully off the screen at the start and end of the animation */
+  top: -100px;
+  /* Defines the skew origin at the very center when we apply transforms on the animation */
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  /* Adds the crawl animation, which plays for one minute */
+  -webkit-animation: crawl 60s linear;
+          animation: crawl 60s linear;
+}
+
+.crawl .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes crawl {
+  0% {
+    top: 0;
+    -webkit-transform: rotateX(20deg) translateZ(0);
+            transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    -webkit-transform: rotateX(25deg) translateZ(-2500px);
+            transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    -webkit-transform: rotateX(20deg) translateZ(0);
+            transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    -webkit-transform: rotateX(25deg) translateZ(-2500px);
+            transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+.fa-chevron-down {
+  margin-top: 15px;
+}
+/*# sourceMappingURL=style.css.map */
